@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>README</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="file:////home/wenxin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.5/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+    /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: #333;
+      background: none;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    /* Code blocks */
+    pre[class*="language-"] {
+      padding: .8em;
+      overflow: auto;
+      /* border: 1px solid #ddd; */
+      border-radius: 3px;
+      /* background: #fff; */
+      background: #f5f5f5;
+    }
+
+    /* Inline code */
+    :not(pre)>code[class*="language-"] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5;
+    }
+
+    .token.comment,
+    .token.blockquote {
+      color: #969896;
+    }
+
+    .token.cdata {
+      color: #183691;
+    }
+
+    .token.doctype,
+    .token.punctuation,
+    .token.variable,
+    .token.macro.property {
+      color: #333;
+    }
+
+    .token.operator,
+    .token.important,
+    .token.keyword,
+    .token.rule,
+    .token.builtin {
+      color: #a71d5d;
+    }
+
+    .token.string,
+    .token.url,
+    .token.regex,
+    .token.attr-value {
+      color: #183691;
+    }
+
+    .token.property,
+    .token.number,
+    .token.boolean,
+    .token.entity,
+    .token.atrule,
+    .token.constant,
+    .token.symbol,
+    .token.command,
+    .token.code {
+      color: #0086b3;
+    }
+
+    .token.tag,
+    .token.selector,
+    .token.prolog {
+      color: #63a35c;
+    }
+
+    .token.function,
+    .token.namespace,
+    .token.pseudo-element,
+    .token.class,
+    .token.class-name,
+    .token.pseudo-class,
+    .token.id,
+    .token.url-reference .token.variable,
+    .token.attr-name {
+      color: #795da3;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: bold;
+      color: #1d3e81;
+    }
+
+    .token.list {
+      color: #ed6a43;
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+
+    .token.bold {
+      font-weight: bold;
+    }
+
+    .token.italic {
+      font-style: italic;
+    }
+
+
+    /* JSON */
+    .language-json .token.property {
+      color: #183691;
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333;
+    }
+
+    /* CSS */
+    code.language-css,
+    .language-css .token.function {
+      color: #0086b3;
+    }
+
+    /* YAML */
+    .language-yaml .token.atrule {
+      color: #63a35c;
+    }
+
+    code.language-yaml {
+      color: #183691;
+    }
+
+    /* Ruby */
+    .language-ruby .token.function {
+      color: #333;
+    }
+
+    /* Markdown */
+    .language-markdown .token.url {
+      color: #795da3;
+    }
+
+    /* Makefile */
+    .language-makefile .token.symbol {
+      color: #795da3;
+    }
+
+    .language-makefile .token.variable {
+      color: #183691;
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3;
+    }
+
+    /* Bash */
+    .language-bash .token.keyword {
+      color: #0086b3;
+    }
+
+    html body {
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ul,
+    html body>ol {
+      margin-bottom: 16px
+    }
+
+    html body ul,
+    html body ol {
+      padding-left: 2em
+    }
+
+    html body ul.no-list,
+    html body ol.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ul ul,
+    html body ul ol,
+    html body ol ol,
+    html body ol ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: bold;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em !important;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::before,
+    html body code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: .85em !important;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      font-size: .85em !important;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:before,
+    html body pre tt:before,
+    html body pre code:after,
+    html body pre tt:after {
+      content: normal
+    }
+
+    html body p,
+    html body blockquote,
+    html body ul,
+    html body ol,
+    html body dl,
+    html body pre {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body pre,
+      html body code {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview .pagebreak,
+    .markdown-preview .newpage {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, 0.66);
+      border: 4px solid rgba(150, 150, 150, 0.66);
+      background-clip: content-box
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, 0.66);
+      border: 4px solid rgba(150, 150, 150, 0.66);
+      background-clip: content-box
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul {
+      padding: 0 1.6em;
+      margin-top: .8em
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li {
+      margin-bottom: .8em
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul {
+      list-style-type: none
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 150px);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    /* Please visit the URL below for more information: */
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+  </style>
+</head>
+
+<body for="html-export">
+  <div class="mume markdown-preview   ">
+    <h2 class="mume-header" id="%E6%B5%8B%E8%AF%95%E9%A2%98">测试题：</h2>
+
+    <p>在城市道路驾驶中，我们经常会遇到需要车辆掉头的场景，请设计并实现一个轨迹生成类(一个或者几个class/struct组成)，能够生成一条位置、曲率平滑的轨迹，让车辆能够完成掉头运动。</p>
+    <p>输入：需要完成掉头的两条车道的中心线数据，中心线的每个点数据包含位置与朝向（x,y,theta）</p>
+    <p>输出：连接两条车道的完整轨迹，轨迹中每个点包含位置、朝向与曲率数据（x,y,theta,kappa）</p>
+    <ol>
+      <li>最好精确连接两条车道中心线</li>
+    </ol>
+    <p>要求：</p>
+    <p>1、 不使用任何第三方库；</p>
+    <p>2、 API设计友好，做到自解释；</p>
+    <p>3、 代码的可读性和可维护性好；</p>
+    <p>4、 完成相应的单元测试, 你的代码必须可编译，单元测试有效而且通过;<br>
+      1. 车辆属性需要自己设置，以及测试不同的车辆属性</p>
+    <p>6、能够可视化输出的数据</p>
+    <h2 class="mume-header" id="%E6%96%B9%E6%A1%881%E6%9C%80%E7%BB%88%E6%96%B9%E6%A1%88">方案1（最终方案）：</h2>
+
+    <p>使用A-Star来寻找可行驶轨迹。在离散的情况下A-Star给出的路径不是可行驶的，但是当我们加入汽车的动力学约束后，也许可以达到题目要求的结果。</p>
+    <ol>
+      <li>使用动力学约束来计算A-Star的可扩展区域（格子）
+        <ol>
+          <li>约束动力学模型的同时，HeuristicCost也需要根据UTurn的场景进行适当的优化</li>
+        </ol>
+      </li>
+      <li>删除不合理的区域（碰到障碍物，地图外，效率低等）</li>
+      <li>记录连续的车辆状态以及状态关联的离散格子</li>
+      <li>待得到搜索结果后取出路径相关联的连续状态数据（x，y，theta）</li>
+      <li>检查曲率是否平滑</li>
+      <li>可视化
+        <ol>
+          <li>可视化部分使用python的matplotlib</li>
+        </ol>
+      </li>
+      <li>测试代码部分并没有引入测试框架（gtest，boosttest等），而是用脚本配合c++ assert的轻量化方案， 因为开发和测试过程中需要很多肉眼观测的辅助和<br>
+        批量的测试文件读取，使用c++对代码维护要求较高， 而且无法做到和代码不耦合的可视化。</li>
+    </ol>
+    <h3 class="mume-header" id="%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">程序使用说明：</h3>
+
+    <ol>
+      <li>
+        <p>构建：</p>
+        <pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token function">cd</span> /path/to/U-Turn-Solution
+<span class="token function">mkdir</span> build
+<span class="token function">cd</span> build
+cmake <span class="token punctuation">..</span>
+<span class="token function">make</span>
+<span class="token function">cd</span> <span class="token punctuation">..</span>
+</pre>
+      </li>
+      <li>
+        <p>运行测试脚本：</p>
+        <pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token comment"># 测试单个数据并可视化</span>
+./test_and_viz_one.sh ./test_data/lane_data_1.txt
+<span class="token comment"># 批量测试所有数据集</span>
+./test_all_and_quiet.sh
+</pre>
+        <p><strong>测试数据中的lane_data.3.txt是通过不了测试的，因为我给的数据中两个lane之间的距离过长， 可以试试把程序的第一个参数放大到5以上，但是效果不是很好，针对这种长距离的规划我这边还需要优化</strong></p>
+      </li>
+      <li>
+        <p>参数说明：</p>
+        <p>本程序采用命令行参数传递的形式设置参数，参数设置方法可参照：<br>
+          第1~6个参数：</p>
+        <pre data-role="codeBlock" data-info="c++" class="language-cpp">    <span class="token comment">// load planner config from command line</span>
+    twx_algo<span class="token operator">::</span>MotionConfig motion_config <span class="token operator">=</span> <span class="token punctuation">{</span>
+        argc <span class="token operator">></span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">?</span> std<span class="token operator">::</span><span class="token function">stod</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token comment">// desired_speed or a-star simulation speed</span>
+        argc <span class="token operator">></span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">?</span> std<span class="token operator">::</span><span class="token function">stod</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">4.5</span><span class="token punctuation">,</span>  <span class="token comment">// ego car wheelbase</span>
+        argc <span class="token operator">></span> <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">?</span> std<span class="token operator">::</span><span class="token function">stod</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">40.0</span><span class="token punctuation">,</span> <span class="token comment">// max steering angle</span>
+        argc <span class="token operator">></span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">?</span> std<span class="token operator">::</span><span class="token function">stod</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// min steering angle</span>
+
+    twx_algo<span class="token operator">::</span>hybrid_a_star<span class="token operator">::</span>SearchConfig search_config <span class="token operator">=</span> <span class="token punctuation">{</span>
+        argc <span class="token operator">></span> <span class="token number">5</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">?</span> std<span class="token operator">::</span><span class="token function">stod</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">20.0</span><span class="token punctuation">,</span> <span class="token comment">// explore steering angle step</span>
+        argc <span class="token operator">></span> <span class="token number">6</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">?</span> std<span class="token operator">::</span><span class="token function">stod</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">1.0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// time duration each exploration</span>
+</pre>
+        <p>第7个参数为环境信息即lane数据：</p>
+        <pre data-role="codeBlock" data-info="c++" class="language-cpp">    <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">></span> <span class="token number">7</span> <span class="token operator">&amp;&amp;</span> argv<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        lane_data_file_name <span class="token operator">=</span> argv<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        std<span class="token operator">::</span>ifstream <span class="token function">lane_stream</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span> std<span class="token operator">::</span>ifstream<span class="token operator">::</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+</pre>
+        <p>所以在我的测试脚本中我是这么做的：</p>
+        <pre data-role="codeBlock" data-info="shell" class="language-shell">    ./build/u_turn_planner_test 1.0 3 40 -40 40 1.0 ./test_data/lane_data.txt
+</pre>
+      </li>
+    </ol>
+    <h3 class="mume-header" id="%E6%96%B9%E6%A1%881%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E8%A7%A3%E9%87%8A">方案1关键技术解释：</h3>
+
+    <ol>
+      <li>
+        <p>路径搜索使用了Hybrid A Star，‘Hybrid‘意味着路径搜索过程结合了车辆运动模型。也就是再grid map中每向前走一步，都只搜索车辆可到达的区域。</p>
+      </li>
+      <li>
+        <p>A Star中没有使用3维数组形式的真栅各地图，而是:</p>
+        <pre data-role="codeBlock" data-info="c++" class="language-cpp">std<span class="token operator">::</span>vector<span class="token operator">&lt;</span>std<span class="token operator">::</span>map<span class="token operator">&lt;</span>Point<span class="token punctuation">,</span> State<span class="token operator">>></span>
+</pre>
+        <p>该形式有点像稀疏矩阵的表达方式， 大大节约了空间消耗，也大大减轻的坐标系转换的工作。</p>
+      </li>
+      <li>
+        <p>车辆运动模型为：<br>
+          <img src="motion.jpeg" alt="&#x8FD0;&#x52A8;&#x6A21;&#x578B;"><br>
+          相关代码：</p>
+        <pre data-role="codeBlock" data-info="c++" class="language-cpp">    <span class="token keyword">double</span> delta <span class="token operator">=</span> M_PI <span class="token operator">*</span> steering <span class="token operator">/</span> <span class="token number">180.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> omega <span class="token operator">=</span> motion_config_<span class="token punctuation">.</span>desired_speed <span class="token operator">/</span> motion_config_<span class="token punctuation">.</span>wheelbase <span class="token operator">*</span> std<span class="token operator">::</span><span class="token function">tan</span><span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">double</span> next_theta <span class="token operator">=</span> theta <span class="token operator">+</span> omega <span class="token operator">*</span> search_config_<span class="token punctuation">.</span>time_step<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> next_x <span class="token operator">=</span> x <span class="token operator">+</span> motion_config_<span class="token punctuation">.</span>desired_speed <span class="token operator">*</span> std<span class="token operator">::</span><span class="token function">cos</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span> <span class="token operator">*</span> search_config_<span class="token punctuation">.</span>time_step<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> next_y <span class="token operator">=</span> y <span class="token operator">+</span> motion_config_<span class="token punctuation">.</span>desired_speed <span class="token operator">*</span> std<span class="token operator">::</span><span class="token function">sin</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span> <span class="token operator">*</span> search_config_<span class="token punctuation">.</span>time_step<span class="token punctuation">;</span>
+</pre>
+      </li>
+      <li>
+        <p>最终的轨迹经过了拟合以及重采样，为了让轨迹是平滑的，同时也是为了计算kappa<br>
+          kappa的计算根据该公式得出：<br>
+          <img src="kappa_calculation.png" alt="&#x66F2;&#x7387;&#x8BA1;&#x7B97;"></p>
+      </li>
+    </ol>
+    <h2 class="mume-header" id="%E5%85%B6%E4%BB%96%E6%96%B9%E6%A1%881">其他方案1:</h2>
+
+    <p>生成半圆曲线作为reference line, 然后使用qp进行优化， 这个实现难度较大， 还有较多数学问题需要深究，时间上可能来不及</p>
+    <h2 class="mume-header" id="%E5%85%B6%E4%BB%96%E6%96%B9%E6%A1%882">其他方案2：</h2>
+
+    <p>使用目标lane的入口作为end-configuration space，然后使用Jerk minimize直接求解汽车可执行轨迹，然后检查轨迹是超过边界或存在碰撞。<br>
+      这个如果可以使用现有代码应该很快可以验证，但是题目明确了不能使用第三方库。这里可以给出一点核心代码(代码是工作过程中的积累，虽然其中的数学公式需要继续消化)：</p>
+    <pre data-role="codeBlock" data-info="c++" class="language-cpp"><span class="token comment">/**
+ * jerk-minimized trajectory solver
+ * @param start Init configuration
+ * @param end Final configuration
+ * @return JMT params
+ */</span> 
+TrajectoryParams <span class="token function">generate_jerk_minimized_trajectory</span><span class="token punctuation">(</span>
+    <span class="token keyword">const</span> TrajectoryReference <span class="token operator">&amp;</span>start<span class="token punctuation">,</span> 
+    <span class="token keyword">const</span> TrajectoryReference <span class="token operator">&amp;</span>end
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    TrajectoryParams trajectory_params<span class="token punctuation">;</span>
+
+    trajectory_params<span class="token punctuation">.</span>T <span class="token operator">=</span> end<span class="token punctuation">.</span>timestamp <span class="token operator">-</span> start<span class="token punctuation">.</span>timestamp<span class="token punctuation">;</span>
+
+    <span class="token comment">// rectify round trip behavior:</span>
+    <span class="token keyword">double</span> rectified_start_s <span class="token operator">=</span> start<span class="token punctuation">.</span>s<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> rectified_end_s <span class="token operator">=</span> end<span class="token punctuation">.</span>s<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>rectified_start_s <span class="token operator">></span> rectified_end_s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        rectified_start_s <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">6945.554</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    trajectory_params<span class="token punctuation">.</span>s <span class="token operator">=</span> <span class="token function">solve_jerk_minimized_trajectory</span><span class="token punctuation">(</span>
+        rectified_start_s<span class="token punctuation">,</span> start<span class="token punctuation">.</span>vs<span class="token punctuation">,</span> start<span class="token punctuation">.</span>as<span class="token punctuation">,</span>
+          rectified_end_s<span class="token punctuation">,</span>   end<span class="token punctuation">.</span>vs<span class="token punctuation">,</span>   end<span class="token punctuation">.</span>as<span class="token punctuation">,</span>
+        trajectory_params<span class="token punctuation">.</span>T
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    trajectory_params<span class="token punctuation">.</span>d <span class="token operator">=</span> <span class="token function">solve_jerk_minimized_trajectory</span><span class="token punctuation">(</span>
+        start<span class="token punctuation">.</span>d<span class="token punctuation">,</span> start<span class="token punctuation">.</span>vd<span class="token punctuation">,</span> start<span class="token punctuation">.</span>ad<span class="token punctuation">,</span>
+          end<span class="token punctuation">.</span>d<span class="token punctuation">,</span>   end<span class="token punctuation">.</span>vd<span class="token punctuation">,</span>   end<span class="token punctuation">.</span>ad<span class="token punctuation">,</span>
+        trajectory_params<span class="token punctuation">.</span>T
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> trajectory_params<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> <span class="token function">solve_jerk_minimized_trajectory</span><span class="token punctuation">(</span>
+    <span class="token keyword">double</span> x0<span class="token punctuation">,</span> <span class="token keyword">double</span> vx0<span class="token punctuation">,</span> <span class="token keyword">double</span> ax0<span class="token punctuation">,</span>
+    <span class="token keyword">double</span> x1<span class="token punctuation">,</span> <span class="token keyword">double</span> vx1<span class="token punctuation">,</span> <span class="token keyword">double</span> ax1<span class="token punctuation">,</span>
+    <span class="token keyword">double</span> T
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// pre-computed exponentials of T:</span>
+    std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> T_exp<span class="token punctuation">{</span><span class="token number">1.0</span><span class="token punctuation">,</span> T<span class="token punctuation">,</span> <span class="token function">pow</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">pow</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">pow</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token number">4.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">pow</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// system matrix:</span>
+    Eigen<span class="token operator">::</span>MatrixXd <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    A <span class="token operator">&lt;&lt;</span>   T_exp<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>    T_exp<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>    T_exp<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+         <span class="token number">3</span><span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token number">4</span><span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token number">5</span><span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+         <span class="token number">6</span><span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// desired output:</span>
+    Eigen<span class="token operator">::</span>VectorXd <span class="token function">b</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    b <span class="token operator">&lt;&lt;</span>  x1 <span class="token operator">-</span> <span class="token punctuation">(</span>x0 <span class="token operator">+</span> vx0<span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">0.5</span><span class="token operator">*</span>ax0<span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+         vx1 <span class="token operator">-</span> <span class="token punctuation">(</span>vx0 <span class="token operator">+</span> ax0<span class="token operator">*</span>T_exp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+         ax1 <span class="token operator">-</span> ax0<span class="token punctuation">;</span>
+    
+    <span class="token comment">// polynomial coefficients:</span>
+    Eigen<span class="token operator">::</span>VectorXd coeffs <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">colPivHouseholderQr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>x0<span class="token punctuation">,</span> vx0<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token operator">*</span>ax0<span class="token punctuation">,</span> <span class="token function">coeffs</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">coeffs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">coeffs</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+  </div>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
