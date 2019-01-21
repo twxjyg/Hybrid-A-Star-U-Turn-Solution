@@ -46,6 +46,8 @@ Rough compute process is:
     ./test_all_and_quiet.sh
     ```
     **test data lane_data.3.txt is a very wired test data, its not a uturn scenario, so the result seems not very good**
+    example output:
+    ![normal-u-turn](test_data/lane_data.1.txt.png)
 
 3. About inner parameters：
 
@@ -235,6 +237,8 @@ std::vector<double> solve_jerk_minimized_trajectory(
     ./test_all_and_quiet.sh
     ```
     **测试数据中的lane_data.3.txt是通过不了测试的，因为我给的数据中两个lane之间的距离过长， 可以试试把程序的第一个参数放大到5以上，但是效果不是很好，针对这种长距离的规划我这边还需要优化**
+    样例输出:
+    ![normal-u-turn](test_data/lane_data.1.txt.png)
 
 3. 参数说明：
 
