@@ -40,13 +40,15 @@ Rough compute process is:
 2. Run test and display result：
 
     ```shell
-    # 测试单个数据并可视化
+    # test single data and visualize one
     ./test_and_viz_one.sh ./test_data/lane_data_1.txt
-    # 批量测试所有数据集
+    # batch test all data and generate image
     ./test_all_and_quiet.sh
     ```
-    **test data lane_data.3.txt is a very wired test data, its not a uturn scenario, so the result seems not very good**
-    example output:
+    **test data lane_data.3.txt is a very wired test data, its not a U-Turn scenario, so the result seems not very good.**
+
+    **Example output**:
+
     ![normal-u-turn](test_data/lane_data.1.txt.png)
 
 3. About inner parameters：
@@ -133,9 +135,9 @@ Use target lane entrance as the end-configuration space，then use Jerk minimal 
  * @param start Init configuration
  * @param end Final configuration
  * @return JMT params
- */ 
+ */
 TrajectoryParams generate_jerk_minimized_trajectory(
-    const TrajectoryReference &start, 
+    const TrajectoryReference &start,
     const TrajectoryReference &end
 ) {
     TrajectoryParams trajectory_params;
@@ -159,7 +161,7 @@ TrajectoryParams generate_jerk_minimized_trajectory(
           end.d,   end.vd,   end.ad,
         trajectory_params.T
     );
-    
+
     return trajectory_params;
 }
 std::vector<double> solve_jerk_minimized_trajectory(
@@ -169,23 +171,23 @@ std::vector<double> solve_jerk_minimized_trajectory(
 ) {
     // pre-computed exponentials of T:
     std::vector<double> T_exp{1.0, T, pow(T, 2.0), pow(T, 3.0),pow(T, 4.0), pow(T, 5.0)};
-    
+
     // system matrix:
-    Eigen::MatrixXd A(3, 3); 
-    A <<   T_exp[3],    T_exp[4],    T_exp[5], 
-         3*T_exp[2],  4*T_exp[3],  5*T_exp[4], 
+    Eigen::MatrixXd A(3, 3);
+    A <<   T_exp[3],    T_exp[4],    T_exp[5],
+         3*T_exp[2],  4*T_exp[3],  5*T_exp[4],
          6*T_exp[1], 12*T_exp[2], 20*T_exp[3];
-    
+
     // desired output:
     Eigen::VectorXd b(3);
 
     b <<  x1 - (x0 + vx0*T_exp[1] + 0.5*ax0*T_exp[2]),
          vx1 - (vx0 + ax0*T_exp[1]),
          ax1 - ax0;
-    
+
     // polynomial coefficients:
     Eigen::VectorXd coeffs = A.colPivHouseholderQr().solve(b);
-   
+
     return {x0, vx0, 0.5*ax0, coeffs(0), coeffs(1), coeffs(2)};
 }
 ```
@@ -236,8 +238,10 @@ std::vector<double> solve_jerk_minimized_trajectory(
     # 批量测试所有数据集
     ./test_all_and_quiet.sh
     ```
-    **测试数据中的lane_data.3.txt是通过不了测试的，因为我给的数据中两个lane之间的距离过长， 可以试试把程序的第一个参数放大到5以上，但是效果不是很好，针对这种长距离的规划我这边还需要优化**
-    样例输出:
+    **测试数据中的lane_data.3.txt是通过不了测试的，因为我给的数据中两个lane之间的距离过长， 可以试试把程序的第一个参数放大到5以上，但是效果不是很好，针对这种长距离的规划我这边还需要优化。**
+
+    **样例输出**:
+
     ![normal-u-turn](test_data/lane_data.1.txt.png)
 
 3. 参数说明：
@@ -322,9 +326,9 @@ std::vector<double> solve_jerk_minimized_trajectory(
  * @param start Init configuration
  * @param end Final configuration
  * @return JMT params
- */ 
+ */
 TrajectoryParams generate_jerk_minimized_trajectory(
-    const TrajectoryReference &start, 
+    const TrajectoryReference &start,
     const TrajectoryReference &end
 ) {
     TrajectoryParams trajectory_params;
@@ -348,7 +352,7 @@ TrajectoryParams generate_jerk_minimized_trajectory(
           end.d,   end.vd,   end.ad,
         trajectory_params.T
     );
-    
+
     return trajectory_params;
 }
 std::vector<double> solve_jerk_minimized_trajectory(
@@ -358,26 +362,23 @@ std::vector<double> solve_jerk_minimized_trajectory(
 ) {
     // pre-computed exponentials of T:
     std::vector<double> T_exp{1.0, T, pow(T, 2.0), pow(T, 3.0),pow(T, 4.0), pow(T, 5.0)};
-    
+
     // system matrix:
-    Eigen::MatrixXd A(3, 3); 
-    A <<   T_exp[3],    T_exp[4],    T_exp[5], 
-         3*T_exp[2],  4*T_exp[3],  5*T_exp[4], 
+    Eigen::MatrixXd A(3, 3);
+    A <<   T_exp[3],    T_exp[4],    T_exp[5],
+         3*T_exp[2],  4*T_exp[3],  5*T_exp[4],
          6*T_exp[1], 12*T_exp[2], 20*T_exp[3];
-    
+
     // desired output:
     Eigen::VectorXd b(3);
 
     b <<  x1 - (x0 + vx0*T_exp[1] + 0.5*ax0*T_exp[2]),
          vx1 - (vx0 + ax0*T_exp[1]),
          ax1 - ax0;
-    
+
     // polynomial coefficients:
     Eigen::VectorXd coeffs = A.colPivHouseholderQr().solve(b);
-   
+
     return {x0, vx0, 0.5*ax0, coeffs(0), coeffs(1), coeffs(2)};
 }
 ```
-
-
-
