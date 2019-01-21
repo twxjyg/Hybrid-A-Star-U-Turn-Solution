@@ -9,7 +9,7 @@ Output：A trajectory can connect two lane
 
 ## Solution：
 
-Use A_star to find drivable trajectory. Need notice that when our space is descreted, the path comes out from a-star is not drivable, because it's not smooth and doesn't concern car motion model, for example car's maximum turn radius. For solve that issue, the Hybrid-A-Star solution comes out. In Hybrid-A-Star solution, we count car's motion model into search algorithm, make sure each step of search(exploration) is under constraint of motion model.
+Use A-Star to find drivable trajectory. Need notice that when our space is descreted, the path comes out from A-Star is not drivable, because it's not smooth and doesn't concern car motion model, for example car's maximum turn radius. For solve that issue, the Hybrid-A-Star solution comes out. In Hybrid-A-Star solution, we count car's motion model into search algorithm, make sure each step of search(exploration) is under constraint of motion model.
 
 Rough compute process is:
 
@@ -53,7 +53,7 @@ Rough compute process is:
     ```c++
         // load planner config from command line
         twx_algo::MotionConfig motion_config = {
-            argc > 1 && argv[1] != NULL ? std::stod(argv[1]) : 1.0,  // desired_speed or a-star simulation speed
+            argc > 1 && argv[1] != NULL ? std::stod(argv[1]) : 1.0,  // desired_speed or A-Star simulation speed
             argc > 2 && argv[2] != NULL ? std::stod(argv[2]) : 4.5,  // ego car wheelbase
             argc > 3 && argv[3] != NULL ? std::stod(argv[3]) : 40.0, // max steering angle
             argc > 4 && argv[4] != NULL ? std::stod(argv[4]) : -40}; // min steering angle
