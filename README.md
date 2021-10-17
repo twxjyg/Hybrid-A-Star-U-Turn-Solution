@@ -1,8 +1,7 @@
 # English:
 
 ## Problem
-
-At urban scenario, we often need do U-Turn, this repo aims to design a trajectory generator, it can generate a trajectory with each point have position and smooth curve, and this trajectory can be used by car to do a U-Turn
+In urban scenario, we often need do U-Turn, this repo aims to design a trajectory generator, it can generate a trajectory with each point have position and smooth curve, and this trajectory can be used by car to do a U-Turn
 
 Input：Two lane in a U-Turn scenario, each lane contains center line, and each center line contains sequence of pose{x,y,theta,kappa}
 
